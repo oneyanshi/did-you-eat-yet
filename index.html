@@ -465,7 +465,7 @@ Macro.add('playtime', {
 /*! <<cyclinglink>> macro for SugarCube 2.x */
 !function(){"use strict";if("undefined"==typeof version||"undefined"==typeof version.title||"SugarCube"!==version.title||"undefined"==typeof version.major||version.major<2)throw new Error("<<cyclinglink>> macro requires SugarCube 2.0 or greater, aborting load");version.extensions.cyclinglinkMacro={major:3,minor:3,revision:2},macros.cyclinglink={handler:function(a,b,c){function toggleText(w){w.classList.remove("cyclingLinkInit"),w.classList.toggle(rl+"Enabled"),w.classList.toggle(rl+"Disabled"),w.style.display="none"===w.style.display?"inline":"none"}var rl="cyclingLink";switch(c[c.length-1]){case"end":var end=!0;c.pop();break;case"out":var out=!0;c.pop()}var v=null;c.length&&"$"===c[0][0]&&(v=c[0].slice(1),c.shift());var h=State.variables;if(!out||!v||""!==h[v]){var l=insertElement(a,"a");l.className="link-internal cyclingLink",l.setAttribute("data-cycle",0);for(var i=0;i<c.length;i++){var on=i===(v?Math.max(c.indexOf(h[v]),0):0),d=insertElement(null,"span",null,"cyclingLinkInit cyclingLink"+(on?"En":"Dis")+"abled");on?(v&&(h[v]=c[i]),l.setAttribute("data-cycle",i)):d.style.display="none",insertText(d,c[i]),on&&end&&i===c.length-1?l.parentNode.replaceChild(d,l):l.appendChild(d)}jQuery(l).ariaClick(function(){var t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length;if(toggleText(t[u]),u+=1,out&&u===m?v&&(h[v]=""):(u%=m,v&&(h[v]=c[u])),(end||out)&&u===m-(end?1:0)){if(!end)return void this.parentNode.removeChild(this);var n=this.removeChild(t[u]);return n.className=rl+"End",n.style.display="inline",void this.parentNode.replaceChild(n,this)}toggleText(t[u]),this.setAttribute("data-cycle",u)})}}}}();
 
-</script><tw-passagedata pid="1" name="Introduction" tags="pauseTag pausetimer" position="2100,225" size="200,200">&lt;&lt;audio mainsong play loop&gt;&gt;
+</script><tw-passagedata pid="1" name="Introduction" tags="pauseTag pausetimer" position="3100,150" size="200,200">&lt;&lt;audio mainsong play loop&gt;&gt;
 &lt;div id=&quot;passages&quot;&gt;
 &lt;div id=&quot;section&quot;&gt;&lt;span id=&quot;title&quot;&gt;Did you eat yet?&lt;/span&gt;
 (Please play with headphones/audio, if possible.)
@@ -483,7 +483,7 @@ Macro.add('playtime', {
 &lt;&lt;fadein 10s&gt;&gt;&lt;span class=&quot;button&quot;&gt;[[Oh. Your phone&#39;s ringing.]]&lt;/span&gt;&lt;&lt;/fadein&gt;&gt;
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="2" name="I know. School&#39;s been hectic." tags="" position="3050,950" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+</tw-passagedata><tw-passagedata pid="2" name="I know. School&#39;s been hectic." tags="" position="4050,950" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -503,7 +503,7 @@ Macro.add('playtime', {
 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll try to call more often next time.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[Mom, I&#39;m really busy.]]&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="I know. I&#39;m just really busy." tags="" position="2400,600" size="100,100">&lt;div id=&quot;passages&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="I know. I&#39;m just really busy." tags="" position="3300,600" size="100,100">&lt;div id=&quot;passages&quot;&gt;
 &lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
@@ -514,9 +514,11 @@ Macro.add('playtime', {
 &lt;&lt;/nobr&gt;&gt;&lt;/div&gt;
 &lt;span class=&quot;mom&quot;&gt;Too busy to call home?&lt;/span&gt;
 
+&lt;span class=&quot;narrative&quot;&gt;You make glances at your laptop with 10 windows and countless tabs associated with each.&lt;/span&gt;
+
 &lt;span class=&quot;you&quot;&gt;[[Well, I have time now.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I really don&#39;t have the time.]]&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Pick up the phone." tags="" position="2700,550" size="100,100">&lt;div id=&quot;passages&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Pick up the phone." tags="" position="3700,550" size="100,100">&lt;div id=&quot;passages&quot;&gt;
 &lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
@@ -535,7 +537,7 @@ Macro.add('playtime', {
 
 &lt;span class=&quot;you&quot;&gt;[[I know. School&#39;s been hectic.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I know. I&#39;m just really busy.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="5" name="Well, I have time now." tags="" position="2500,1025" size="100,100">&lt;div id=&quot;passages&quot;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="5" name="Well, I have time now." tags="" position="3500,1025" size="100,100">&lt;div id=&quot;passages&quot;&gt;
 &lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
@@ -550,7 +552,7 @@ Macro.add('playtime', {
 
 &lt;span class=&quot;you&quot;&gt;[[No, it&#39;s fine.]]&lt;/span&gt; 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;m fine.]]&lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="6" name="I really don&#39;t have the time." tags="" position="2050,1150" size="200,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="6" name="I really don&#39;t have the time." tags="" position="3050,1050" size="200,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -564,7 +566,7 @@ Macro.add('playtime', {
 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;m fine.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[Mom, I&#39;m really busy.]]&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="I&#39;m fine." tags="" position="2525,1850" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="I&#39;m fine." tags="" position="3600,1850" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -576,14 +578,14 @@ Macro.add('playtime', {
 
 &lt;span class=&quot;mom&quot;&gt;... &lt;/span&gt;
 
-&lt;span class=&quot;narrative&quot;&gt;There is silence. The phone in your hand feels heavy. Then, she speaks. &lt;/span&gt;
+&lt;span class=&quot;narrative&quot;&gt;There is silence. The phone in your hand feels heavy. You make glances at your laptop. Then, she speaks. &lt;/span&gt;
 
 &lt;span class=&quot;mom&quot;&gt;Did you eat yet? &lt;/span&gt;
 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ve been eating like a horse.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;m eating alright.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[Not yet. I don&#39;t have the time to sit down.]]&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Mom, I&#39;m really busy." tags="" position="1500,650" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Mom, I&#39;m really busy." tags="" position="2500,650" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -595,7 +597,7 @@ Macro.add('playtime', {
 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll call you when I have free time.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll call you when I&#39;m not busy.]] &lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="I&#39;ll call you when I have free time." tags="" position="1675,250" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="I&#39;ll call you when I have free time." tags="" position="2675,250" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -609,7 +611,7 @@ Macro.add('playtime', {
 
 &lt;span class=&quot;you&quot;&gt;[[Bye, 妈.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[Wait, mom —]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="10" name="I&#39;ll call you when I&#39;m not busy." tags="" position="1675,1550" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="10" name="I&#39;ll call you when I&#39;m not busy." tags="" position="2675,1550" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -627,7 +629,7 @@ Macro.add('playtime', {
 
 &lt;span class=&quot;you&quot;&gt;[[Wait, mom —]] &lt;/span&gt;
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]]&lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="11" name="End the phone call." tags="pauseTag pausetimer" position="2350,3625" size="200,200">&lt;div id=&quot;passages&quot;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="11" name="End the phone call." tags="pauseTag pausetimer" position="3350,3625" size="200,200">&lt;div id=&quot;passages&quot;&gt;
 &lt;div id=&quot;header&quot;&gt;End&lt;/div&gt;
  
 Thanks for playing &quot;Did you eat yet?&quot; Total time: &lt;&lt;=playTime()&gt;&gt;
@@ -642,7 +644,7 @@ Credits
 Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;button&quot;&gt;Back to [[Introduction]].&lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="12" name="Bye, 妈." tags="" position="1700,2025" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="12" name="Bye, 妈." tags="" position="2700,2025" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -652,10 +654,10 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 &lt;&lt;/nobr&gt;&gt;&lt;/div&gt;
 &lt;span class=&quot;mom&quot;&gt;Byebye. Call soon, okay? &lt;/span&gt;
 
-&lt;span class=&quot;narrative&quot;&gt;You make an affirmative sound.&lt;/span&gt; 
+&lt;span class=&quot;narrative&quot;&gt;You make an affirmative sound. Your fingers tap at the keyboard.&lt;/span&gt; 
 
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="13" name="Wait, mom —" tags="" position="1000,200" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="13" name="Wait, mom —" tags="" position="2000,200" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -672,7 +674,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;you&quot;&gt;[[Take care, okay?]] &lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I love you.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="14" name="Take care, okay?" tags="" position="575,325" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="14" name="Take care, okay?" tags="" position="1575,325" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -686,7 +688,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;you&quot;&gt;[[I will, bye 妈.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I love you.]] &lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="15" name="I love you." tags="" position="400,1075" size="200,100">&lt;div id=&quot;passages&quot;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="15" name="I love you." tags="" position="1400,1075" size="200,100">&lt;div id=&quot;passages&quot;&gt;
 &lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
@@ -699,7 +701,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;you&quot;&gt;[[Try again.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll talk to you later.]]&lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="16" name="Try again." tags="" position="1075,500" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="16" name="Try again." tags="" position="2075,500" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -713,7 +715,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;you&quot;&gt;[[Blurt it out.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll talk to you later.]] &lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="17" name="I&#39;ll talk to you later." tags="" position="1275,1175" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="17" name="I&#39;ll talk to you later." tags="" position="2275,1175" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -726,7 +728,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 &lt;span class=&quot;you&quot;&gt;Bye, mom. &lt;/span&gt;
 
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]] &lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Blurt it out." tags="" position="2850,3100" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Blurt it out." tags="" position="3850,3100" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -738,7 +740,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;you&quot;&gt;[[Say it anyway.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll talk to you later.]] &lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="19" name="Say it anyway." tags="" position="3300,3200" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="19" name="Say it anyway." tags="" position="4300,3200" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -764,8 +766,10 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;mom&quot;&gt;Talk to you soon. &lt;/span&gt; 
 
+&lt;span class=&quot;narrative&quot;&gt;She lingers for a bit on the phone, waiting for you to hang up.&lt;/span&gt; 
+
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]]&lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="20" name="I will, bye 妈." tags="" position="250,1350" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="20" name="I will, bye 妈." tags="" position="1250,1350" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -776,7 +780,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 &lt;span class=&quot;mom&quot;&gt;Byebye. &lt;/span&gt;
 
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]] &lt;/span&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="I&#39;ve been eating like a horse." tags="" position="2700,1275" size="100,100">&lt;div id=&quot;passages&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="I&#39;ve been eating like a horse." tags="" position="3700,1275" size="100,100">&lt;div id=&quot;passages&quot;&gt;
 &lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
@@ -791,7 +795,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;you&quot;&gt;[[You worry too much.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;m taking care of myself, I promise.]]&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="I&#39;m eating alright." tags="" position="2000,1975" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="I&#39;m eating alright." tags="" position="3000,1975" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -807,7 +811,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;you&quot;&gt;[[Aaaaaaah, now I&#39;m hungry, mom.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[It&#39;s been a long time since I ate your cooking.]]&lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="23" name="Not yet. I don&#39;t have the time to sit down." tags="" position="3475,1850" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="23" name="Not yet. I don&#39;t have the time to sit down." tags="" position="4475,1850" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -821,7 +825,7 @@ Music: Better days by Ben Sound (https://www.bensound.com/royalty-free-music)
 
 &lt;span class=&quot;you&quot;&gt;[[You worry too much.]] &lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll eat when I&#39;m done working.]]&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Oh. Your phone&#39;s ringing." tags="pauseTag pausetimer" position="2500,275" size="100,100">&lt;div id=&quot;passages&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Oh. Your phone&#39;s ringing." tags="pauseTag pausetimer" position="3500,275" size="100,100">&lt;div id=&quot;passages&quot;&gt;
 &lt;&lt;audio phonevibrate play loop&gt;&gt;
 It&#39;s mom. 
 
@@ -829,7 +833,7 @@ You ...
 
 &lt;span id=&quot;pickup&quot;&gt;[[Pick up the phone.]]&lt;/span&gt; 
 &lt;span class=&quot;beginning&quot;&gt;[[Wait a few seconds.]]&lt;/span&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="No, it&#39;s fine." tags="" position="2400,1250" size="100,100">&lt;div id=&quot;passages&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="No, it&#39;s fine." tags="" position="3400,1250" size="100,100">&lt;div id=&quot;passages&quot;&gt;
 &lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
@@ -842,7 +846,7 @@ You ...
 
 &lt;span class=&quot;you&quot;&gt;[[Mom, it&#39;s fine.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[妈, it&#39;s okay. I can talk now.]]&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="妈, it&#39;s okay. I can talk now." tags="" position="3500,1250" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="妈, it&#39;s okay. I can talk now." tags="" position="4500,1250" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -858,7 +862,7 @@ You ...
 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;m fine.]]&lt;/span&gt; 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;m actually tired.]]&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="Mom, it&#39;s fine." tags="" position="2075,1475" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="Mom, it&#39;s fine." tags="" position="3025,1475" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -872,7 +876,7 @@ You ...
 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;m fine.]] &lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[You worry too much.]]&lt;/span&gt;  
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="Wait a few seconds." tags="pauseTag pausetimer" position="3075,350" size="100,100">&lt;div id=&quot;passages&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="Wait a few seconds." tags="pauseTag pausetimer" position="4075,350" size="100,100">&lt;div id=&quot;passages&quot;&gt;
 &lt;&lt;switch visited()&gt;&gt;
 &lt;&lt;case 1&gt;&gt; 
 You wait a few seconds. The table feels like it&#39;s trembling as the phone vibrates. 
@@ -887,7 +891,7 @@ You can&#39;t keep waiting.
 &lt;span id=&quot;pickup&quot;&gt;[[Pick up the phone.]]&lt;/span&gt;  
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="29" name="You worry too much." tags="" position="3050,2175" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+</tw-passagedata><tw-passagedata pid="29" name="You worry too much." tags="" position="4050,2175" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -901,7 +905,7 @@ You can&#39;t keep waiting.
 
 &lt;span class=&quot;you&quot;&gt;[[Take care of yourself, too.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll try to come home soon.]]&lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="30" name="I&#39;m taking care of myself, I promise." tags="" position="3125,1525" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="30" name="I&#39;m taking care of myself, I promise." tags="" position="4125,1525" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -917,7 +921,7 @@ You can&#39;t keep waiting.
 
 &lt;span class=&quot;you&quot;&gt;[[Wait, mom —]] &lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[Take care of yourself, too.]]&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="I&#39;ll eat when I&#39;m done working." tags="" position="3500,2050" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="I&#39;ll eat when I&#39;m done working." tags="" position="4500,2050" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -931,7 +935,7 @@ You can&#39;t keep waiting.
 
 &lt;span class=&quot;you&quot;&gt;[[You worry too much.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[You&#39;re always working, too, 妈.]]&lt;/span&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Take care of yourself, too." tags="" position="3500,2850" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Take care of yourself, too." tags="" position="4500,2850" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -950,7 +954,7 @@ You can&#39;t keep waiting.
 &lt;span class=&quot;mom&quot;&gt;Byebye.&lt;/span&gt; 
 
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]] &lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="33" name="I&#39;m actually tired." tags="" position="3425,1500" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="33" name="I&#39;m actually tired." tags="" position="4425,1500" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -971,7 +975,7 @@ You can&#39;t keep waiting.
 &lt;span class=&quot;you&quot;&gt;[[Mom, it&#39;s fine.]] &lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I have a lot to tell you.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[Talk to you later then.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="34" name="You&#39;re always working, too, 妈." tags="" position="3700,2575" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="34" name="You&#39;re always working, too, 妈." tags="" position="4700,2575" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -985,7 +989,7 @@ You can&#39;t keep waiting.
 
 &lt;span class=&quot;you&quot;&gt;[[Take care of yourself, too.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[Thank you, 妈.]] &lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="35" name="I&#39;ll try to call more often next time." tags="" position="3050,1150" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="35" name="I&#39;ll try to call more often next time." tags="" position="4050,1150" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -999,7 +1003,7 @@ You can&#39;t keep waiting.
 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;m taking care of myself, I promise.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;m fine.]] &lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Aaaaaaah, now I&#39;m hungry, mom." tags="" position="1550,2750" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Aaaaaaah, now I&#39;m hungry, mom." tags="" position="2550,2750" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1017,7 +1021,7 @@ You can&#39;t keep waiting.
 
 &lt;span class=&quot;you&quot;&gt;[[Make a kissy sound into the phone.]]&lt;/span&gt;
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="37" name="It&#39;s been a long time since I ate your cooking." tags="" position="2425,2050" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="37" name="It&#39;s been a long time since I ate your cooking." tags="" position="3425,2050" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1030,7 +1034,7 @@ You can&#39;t keep waiting.
 
 &lt;span class=&quot;you&quot;&gt;[[Thank you, 妈.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll try to come home soon.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="38" name="Make a kissy sound into the phone." tags="" position="1475,3275" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="38" name="Make a kissy sound into the phone." tags="" position="2475,3275" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1045,7 +1049,7 @@ You can&#39;t keep waiting.
 &lt;span class=&quot;narrative&quot;&gt;She returns the sound, saying goodbye again.&lt;/span&gt; 
 
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]] &lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="39" name="Thank you, 妈." tags="" position="2275,2750" size="200,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="39" name="Thank you, 妈." tags="" position="3275,2750" size="200,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1058,7 +1062,7 @@ You can&#39;t keep waiting.
 
 &lt;span class=&quot;you&quot;&gt;[[Take care of your health.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I love you.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="40" name="I&#39;ll try to come home soon." tags="" position="2625,2275" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="40" name="I&#39;ll try to come home soon." tags="" position="3625,2275" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1073,7 +1077,7 @@ You can&#39;t keep waiting.
 
 &lt;span class=&quot;you&quot;&gt;[[I have a lot to tell you.]]&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;[[I have a lot to do until then.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="41" name="I have a lot to tell you." tags="" position="2600,3000" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="41" name="I have a lot to tell you." tags="" position="3600,3000" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1088,7 +1092,7 @@ You can&#39;t keep waiting.
 &lt;span class=&quot;narrative&quot;&gt;But you don&#39;t say these things. Instead: &lt;/span&gt;
 
 &lt;span class=&quot;you&quot;&gt;[[I&#39;ll talk to you about it soon.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="42" name="Take care of your health." tags="" position="3700,3350" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="42" name="Take care of your health." tags="" position="4700,3350" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1101,7 +1105,7 @@ You can&#39;t keep waiting.
 &lt;span class=&quot;you&quot;&gt;Bye, mom!&lt;/span&gt; 
 
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]] &lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="43" name="I have a lot to do until then." tags="" position="3600,3575" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="43" name="I have a lot to do until then." tags="" position="4600,3575" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1114,7 +1118,7 @@ You can&#39;t keep waiting.
 &lt;span class=&quot;you&quot;&gt;Bye, mom.&lt;/span&gt;
 
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]] &lt;/span&gt; 
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="44" name="Talk to you later then." tags="" position="3900,1975" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="44" name="Talk to you later then." tags="" position="4900,1975" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1125,7 +1129,7 @@ You can&#39;t keep waiting.
 &lt;span class=&quot;mom&quot;&gt;Byebye.&lt;/span&gt;
 
 &lt;span id=&quot;end&quot;&gt;[[End the phone call.]] &lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="45" name="I&#39;ll talk to you about it soon." tags="" position="925,3025" size="100,100">&lt;div id=&quot;narrative&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="45" name="I&#39;ll talk to you about it soon." tags="" position="1925,3025" size="100,100">&lt;div id=&quot;narrative&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
      @@#time;&lt;&lt;playtime format&gt;&gt;@@
      &lt;&lt;repeat 1s&gt;&gt;
           &lt;&lt;replace &#39;#time&#39;&gt;&gt;\
@@ -1136,7 +1140,7 @@ You can&#39;t keep waiting.
 &lt;span class=&quot;mom&quot;&gt;... Okay, okay. Take care.&lt;/span&gt;
 &lt;span class=&quot;you&quot;&gt;I will.&lt;/span&gt; 
 &lt;span class=&quot;you&quot;&gt;[[I love you.]]&lt;/span&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="46" name="StoryInit" tags="" position="3400,575" size="200,200">&lt;&lt;cacheaudio &quot;mainsong&quot; &quot;music/bensound-betterdays.mp3&quot;&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="46" name="StoryInit" tags="" position="4400,575" size="200,200">&lt;&lt;cacheaudio &quot;mainsong&quot; &quot;music/bensound-betterdays.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;phonevibrate&quot; &quot;music/vibrate.mp3&quot;&gt;&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
