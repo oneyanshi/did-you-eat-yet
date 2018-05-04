@@ -119,6 +119,11 @@ body{
   font-family: 'Mada', sans-serif;
   font-weight: bold; 
 }
+
+#section{ 
+  margin-bottom: 10px; 
+}
+
 #passages { 
   width: 90%;
 }
@@ -460,22 +465,22 @@ Macro.add('playtime', {
 /*! <<cyclinglink>> macro for SugarCube 2.x */
 !function(){"use strict";if("undefined"==typeof version||"undefined"==typeof version.title||"SugarCube"!==version.title||"undefined"==typeof version.major||version.major<2)throw new Error("<<cyclinglink>> macro requires SugarCube 2.0 or greater, aborting load");version.extensions.cyclinglinkMacro={major:3,minor:3,revision:2},macros.cyclinglink={handler:function(a,b,c){function toggleText(w){w.classList.remove("cyclingLinkInit"),w.classList.toggle(rl+"Enabled"),w.classList.toggle(rl+"Disabled"),w.style.display="none"===w.style.display?"inline":"none"}var rl="cyclingLink";switch(c[c.length-1]){case"end":var end=!0;c.pop();break;case"out":var out=!0;c.pop()}var v=null;c.length&&"$"===c[0][0]&&(v=c[0].slice(1),c.shift());var h=State.variables;if(!out||!v||""!==h[v]){var l=insertElement(a,"a");l.className="link-internal cyclingLink",l.setAttribute("data-cycle",0);for(var i=0;i<c.length;i++){var on=i===(v?Math.max(c.indexOf(h[v]),0):0),d=insertElement(null,"span",null,"cyclingLinkInit cyclingLink"+(on?"En":"Dis")+"abled");on?(v&&(h[v]=c[i]),l.setAttribute("data-cycle",i)):d.style.display="none",insertText(d,c[i]),on&&end&&i===c.length-1?l.parentNode.replaceChild(d,l):l.appendChild(d)}jQuery(l).ariaClick(function(){var t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length;if(toggleText(t[u]),u+=1,out&&u===m?v&&(h[v]=""):(u%=m,v&&(h[v]=c[u])),(end||out)&&u===m-(end?1:0)){if(!end)return void this.parentNode.removeChild(this);var n=this.removeChild(t[u]);return n.className=rl+"End",n.style.display="inline",void this.parentNode.replaceChild(n,this)}toggleText(t[u]),this.setAttribute("data-cycle",u)})}}}}();
 
-</script><tw-passagedata pid="1" name="Introduction" tags="pauseTag pausetimer" position="2100,225" size="200,200">&lt;div id=&quot;passages&quot;&gt;
-&lt;&lt;fadeout 4s 1ms&gt;&gt;&lt;span id=&quot;title&quot;&gt;Did you eat yet?&lt;/span&gt;
+</script><tw-passagedata pid="1" name="Introduction" tags="pauseTag pausetimer" position="2100,225" size="200,200">&lt;&lt;audio mainsong play loop&gt;&gt;
+&lt;div id=&quot;passages&quot;&gt;
+&lt;div id=&quot;section&quot;&gt;&lt;span id=&quot;title&quot;&gt;Did you eat yet?&lt;/span&gt;
 (Please play with headphones/audio, if possible.)
-&lt;&lt;/fadeout&gt;&gt;
-&lt;&lt;audio mainsong play loop&gt;&gt;
-&lt;&lt;fadein 8s 1ms&gt;&gt;It&#39;s been a year since you left home.&lt;&lt;/fadein&gt;&gt;
+&lt;hr&gt;&lt;/div&gt;
+&lt;&lt;fadein 5s&gt;&gt;It&#39;s been a year since you left home.&lt;&lt;/fadein&gt;&gt;
 
-&lt;&lt;fadein 9s 1ms&gt;&gt;A lot&#39;s changed. A lot has happened to you.&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;fadein 6s&gt;&gt;A lot&#39;s changed.&lt;&lt;/fadein&gt;&gt;
 
-&lt;&lt;fadein 10s 1ms&gt;&gt;365 days worth of experiences, for better or for worse.&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;fadein 7s&gt;&gt;365 days worth of experiences, for better or for worse.&lt;&lt;/fadein&gt;&gt;
 
-&lt;&lt;fadein 11s 1ms&gt;&gt;Today, your mom&#39;s going to call you, but you&#39;re very busy.&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;fadein 8s&gt;&gt;Today, your mom&#39;s going to call you, but you&#39;re very busy.&lt;&lt;/fadein&gt;&gt;
 
-&lt;&lt;fadein 12s 1ms&gt;&gt;Errands. Chores. Work. Coping. Taking deep breaths. More work.&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;fadein 9s&gt;&gt;Errands. Chores. Work. Coping. Taking deep breaths. More work.&lt;&lt;/fadein&gt;&gt;
 
-&lt;&lt;fadein 13s 1ms&gt;&gt;&lt;span class=&quot;button&quot;&gt;[[Oh. Your phone&#39;s ringing.]]&lt;/span&gt;&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;fadein 10s&gt;&gt;&lt;span class=&quot;button&quot;&gt;[[Oh. Your phone&#39;s ringing.]]&lt;/span&gt;&lt;&lt;/fadein&gt;&gt;
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="2" name="I know. School&#39;s been hectic." tags="" position="3050,950" size="100,100">&lt;div id=&quot;passages&quot;&gt;&lt;div id=&quot;header&quot;&gt;Mom | &lt;&lt;nobr&gt;&gt;
